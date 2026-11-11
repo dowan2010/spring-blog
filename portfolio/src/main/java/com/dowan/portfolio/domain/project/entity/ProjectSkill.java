@@ -16,12 +16,12 @@ public class ProjectSkill {
     @EmbeddedId
     private ProjectSkillId id;
 
-    @ManyToOne(targetEntity = Project.class)
+    @ManyToOne(targetEntity = Project.class, fetch = FetchType.LAZY)
     @MapsId(value = "projectId")
     @JoinColumn(name = "project_id")
     private Project project;
 
-    @ManyToOne(targetEntity = Skill.class)
+    @ManyToOne(targetEntity = Skill.class, fetch = FetchType.LAZY)
     @MapsId(value = "skillId")
     @JoinColumn(name = "skill_id")
     private Skill skill;
